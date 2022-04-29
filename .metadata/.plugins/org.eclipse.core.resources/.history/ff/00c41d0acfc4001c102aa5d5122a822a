@@ -1,0 +1,5 @@
+package CMV.StoreProject.business.abstracts;
+
+public class ProductService {
+
+}

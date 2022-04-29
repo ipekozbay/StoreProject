@@ -1,0 +1,6 @@
+package CMV.StoreProject.business.abstracts;
+
+public interface ProductService {
+	List<Product> getAll();
+
+}

@@ -1,0 +1,59 @@
+package CMV.StoreProject.entities.concretes;
+
+import javax.persistence.Column;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="products")
+public class Product {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="productStockQuantity")
+	private int productStockQuantity;
+	
+	@Column(name="productPrice")
+	private int productPrice;
+	
+	@Column(name="productBrand")
+	private String productBrand;
+	
+	@Column(name="dateProductWasAdded")
+	private int dateProductWasAdded;
+	
+	@Column(name="productExpiryDate")
+	private int productExpiryDate;
+	
+	@Column(name="categoryOfTheProduct")
+	private String categoryOfTheProduct;
+	
+	@Column(name="serialNumberOfTheProduct")
+	private String serialNumberOfTheProduct;
+	
+	public Product() {}
+	
+	public Product(int productStockQuantity, int productPrice, String productBrand, int dateProductWasAdded,
+			int productExpiryDate, String categoryOfTheProduct, String serialNumberOfTheProduct) 
+	{
+		super();
+		this.productStockQuantity = productStockQuantity;
+		this.productPrice = productPrice;
+		this.productBrand = productBrand;
+		this.dateProductWasAdded = dateProductWasAdded;
+		this.productExpiryDate = productExpiryDate;
+		this.categoryOfTheProduct = categoryOfTheProduct;
+		this.serialNumberOfTheProduct = serialNumberOfTheProduct;
+	}
+
+}

@@ -1,0 +1,11 @@
+package CMV.StoreProject.business.abstracts;
+
+import java.util.List;
+
+import CMV.StoreProject.entities.concretes.Product;
+
+public interface ProductService {
+	List<Product> getAll();
+	
+
+}

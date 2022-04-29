@@ -1,0 +1,13 @@
+package CMV.StoreProject.entities.abstracts;
+
+public class Product {
+	
+	private int productStockQuantity;
+	private int productPrice;
+	private String productBrand;
+	private int dateProductWasAdded;
+	private int productexpiryDate;
+	private String categoryOfTheProduct;
+	private String serialNumberOfTheProduct;
+	
+}

@@ -1,0 +1,5 @@
+package CMV.StoreProject.core.utilities.results;
+
+public class DataResult {
+
+}

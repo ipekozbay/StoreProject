@@ -1,0 +1,5 @@
+package CMV.StoreProject.business.concretes;
+
+public class ProductManager implements ProductService{
+
+}
