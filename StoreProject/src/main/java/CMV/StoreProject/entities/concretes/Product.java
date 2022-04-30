@@ -1,5 +1,7 @@
 package CMV.StoreProject.entities.concretes;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -30,7 +32,7 @@ public class Product {
 	private int productStockQuantity;
 	
 	@Column(name = "product_name")
-	private int productName;
+	private String productName;
 
 	@Column(name = "product_price")
 	private int productPrice;
@@ -39,10 +41,10 @@ public class Product {
 	private String productBrand;
 
 	@Column(name = "date_product_was_added")
-	private int dateProductWasAdded;
+	private LocalDate dateProductWasAdded;
 
 	@Column(name = "product_expiry_date")
-	private int productExpiryDate;
+	private LocalDate productExpiryDate;
 
 //	@Column(name = "category_name")
 //	private String category_name;

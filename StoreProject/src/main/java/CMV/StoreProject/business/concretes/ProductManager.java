@@ -79,10 +79,10 @@ public class ProductManager implements ProductService{
 	}
 
 	@Override
-	public DataResult<List<Product>> getByProductNameStartWith(String productName) {
+	public DataResult<List<Product>> getByProductNameStartsWith(String productName) {
 		
 		return new SuccessDataResult<List<Product>>
-		(this.productDao.getByProductNameStartWith(productName),"data listed"); 
+		(this.productDao.getByProductNameStartsWith(productName),"data listed"); 
 
 	}
 
