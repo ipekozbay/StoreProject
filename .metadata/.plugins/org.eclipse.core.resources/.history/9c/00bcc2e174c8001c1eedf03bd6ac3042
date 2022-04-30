@@ -1,0 +1,30 @@
+package CMV.StoreProject.business.abstracts;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+
+import CMV.StoreProject.core.utilities.results.DataResult;
+import CMV.StoreProject.core.utilities.results.Result;
+import CMV.StoreProject.entities.concretes.Product;
+
+public interface ProductService {
+	DataResult<List<Product>> getAll();
+	Result add(Product product);
+	
+
+	Product getByProductName(String productName);
+
+	Product getByProductNameAndCategoryId(String productName, int categoryId);
+
+	List<Product> getByProductNameOrCategoryId(String productName, int categoryId);
+
+	List<Product> getByCategoryIdIn(List<Integer> categories);
+	
+	List<Product> getByProductNameContains(String productName);
+
+	List<Product> getByProductNameStartWith(String productName);
+
+	List<Product> getByNameAndCategory(String productName, int categoryId);
+
+}

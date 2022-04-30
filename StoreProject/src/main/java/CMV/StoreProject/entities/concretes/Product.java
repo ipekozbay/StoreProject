@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,27 +25,36 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-
-	@Column(name = "productStockQuantity")
+	
+	@Column(name = "product_stock_quantity")
 	private int productStockQuantity;
+	
+	@Column(name = "product_name")
+	private int productName;
 
-	@Column(name = "productPrice")
+	@Column(name = "product_price")
 	private int productPrice;
 
-	@Column(name = "productBrand")
+	@Column(name = "product_brand")
 	private String productBrand;
 
-	@Column(name = "dateProductWasAdded")
+	@Column(name = "date_product_was_added")
 	private int dateProductWasAdded;
 
-	@Column(name = "productExpiryDate")
+	@Column(name = "product_expiry_date")
 	private int productExpiryDate;
 
-	@Column(name = "categoryOfTheProduct")
-	private String categoryOfTheProduct;
+//	@Column(name = "category_name")
+//	private String category_name;
 
 	@Column(name = "serialNumberOfTheProduct")
 	private String serialNumberOfTheProduct;
+	
+	@ManyToOne()
+	@JoinColumn(name = "category_id")
+	private Category category;
+	
+	
 
 	/*
 	 * public Product() {}
