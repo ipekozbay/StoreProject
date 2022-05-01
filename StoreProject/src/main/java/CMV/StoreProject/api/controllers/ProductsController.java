@@ -13,6 +13,7 @@ import CMV.StoreProject.business.abstracts.ProductService;
 import CMV.StoreProject.core.utilities.results.DataResult;
 import CMV.StoreProject.core.utilities.results.Result;
 import CMV.StoreProject.entities.concretes.Product;
+import CMV.StoreProject.entities.dto.ProductWithCategoryDto;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
@@ -35,32 +36,49 @@ public class ProductsController {
 	@PostMapping("/add")
 	public Result add(@RequestBody Product product) {
 		return this.productService.add(product);
-
 	}
 
-	@GetMapping("/getByProductName")
-	public DataResult<Product> getByProductName(@RequestParam String productName) {
-		return this.productService.getByProductName(productName);
+	@PostMapping("/delete")
+	public Result delete(@RequestBody int id) {
+		return this.productService.delete(id);
 	}
 
-	@GetMapping("/getByProductNameAndCategory")
-	public DataResult<List<Product>> getByProductNameAndCategory(@RequestParam String productName,
-			@RequestParam int categoryId) {
-		System.out.println(productName);
-		System.out.println(categoryId);
-
-		return this.productService.getByNameAndCategory(productName, categoryId);
+	@PostMapping("/update")
+	public Result update(@RequestBody Product product) {
+		return this.productService.update(product);
 	}
 
-	@GetMapping("/getByProductNameContains")
-	public DataResult<List<Product>> getByProductNameContains(@RequestParam String productName) {
+//	@GetMapping("/ProductWithCategoryDto")
+//	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+//
+//		return this.productService.getProductWithCategoryDetails();
+//	}
+//
 
-		return this.productService.getByProductNameContains(productName);
-	}
-
-	@GetMapping("/getAllByPage")
-	public DataResult<List<Product>> getAll(int pageNo, int pageSize) {
-		return this.productService.getAll(pageNo, pageSize);
-	}
+//
+//	@GetMapping("/getByProductName")
+//	public DataResult<Product> getByProductName(@RequestParam String productName) {
+//		return this.productService.getByProductName(productName);
+//	}
+//
+//	@GetMapping("/getByProductNameAndCategory")
+//	public DataResult<List<Product>> getByProductNameAndCategory(@RequestParam String productName,
+//			@RequestParam int categoryId) {
+//		System.out.println(productName);
+//		System.out.println(categoryId);
+//
+//		return this.productService.getByNameAndCategory(productName, categoryId);
+//	}
+//
+//	@GetMapping("/getByProductNameContains")
+//	public DataResult<List<Product>> getByProductNameContains(@RequestParam String productName) {
+//
+//		return this.productService.getByProductNameContains(productName);
+//	}
+//
+//	@GetMapping("/getAllByPage")
+//	public DataResult<List<Product>> getAll(int pageNo, int pageSize) {
+//		return this.productService.getAll(pageNo, pageSize);
+//	}
 
 }

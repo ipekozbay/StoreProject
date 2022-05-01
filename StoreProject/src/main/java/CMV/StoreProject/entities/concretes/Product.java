@@ -1,6 +1,7 @@
 package CMV.StoreProject.entities.concretes;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 
@@ -11,6 +12,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,10 +34,10 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	
+
 	@Column(name = "product_stock_quantity")
 	private int productStockQuantity;
-	
+
 	@Column(name = "product_name")
 	private String productName;
 
@@ -40,23 +47,23 @@ public class Product {
 	@Column(name = "product_brand")
 	private String productBrand;
 
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name = "date_product_was_added")
-	private LocalDate dateProductWasAdded;
+	private Date dateProductWasAdded;
 
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name = "product_expiry_date")
-	private LocalDate productExpiryDate;
+	private Date productExpiryDate;
 
 //	@Column(name = "category_name")
 //	private String category_name;
 
-	@Column(name = "serialNumberOfTheProduct")
+	@Column(name = "serial_number_of_the_product")
 	private String serialNumberOfTheProduct;
-	
+
 	@ManyToOne()
 	@JoinColumn(name = "category_id")
 	private Category category;
-	
-	
 
 	/*
 	 * public Product() {}
