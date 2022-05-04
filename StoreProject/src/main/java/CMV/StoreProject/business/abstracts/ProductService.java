@@ -5,18 +5,21 @@ import java.util.List;
 import CMV.StoreProject.core.utilities.results.DataResult;
 import CMV.StoreProject.core.utilities.results.Result;
 import CMV.StoreProject.entities.concretes.Product;
+import CMV.StoreProject.entities.dto.ProductCreateDto;
+import CMV.StoreProject.entities.dto.ProductDto;
+import CMV.StoreProject.entities.dto.ProductUpdateDto;
 
 public interface ProductService {
 
-	DataResult<List<Product>> getAll();
+	DataResult<List<ProductDto>> getAll();
 
-	DataResult<List<Product>> getAll(int pageNo, int pageSize);
+	DataResult<List<ProductDto>> getAll(int pageNo, int pageSize);
 
-	Result add(Product product);
+	Result add(ProductCreateDto product);
 
 	Result delete(int id);
 
-	Result update(Product product);
+	Result update(ProductUpdateDto productUpdateDto);
 
 //	DataResult<Product> getByProductName(String productName);
 

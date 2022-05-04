@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import CMV.StoreProject.entities.dto.ProductCreateDto;
+import CMV.StoreProject.entities.dto.ProductUpdateDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +23,28 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
+
+	public Product(ProductCreateDto productCreateDto) {
+		
+		this.productStockQuantity = productCreateDto.getProductStockQuantity();
+		this.productName = productCreateDto.getProductName();
+		this.productPrice = productCreateDto.getProductPrice();
+		this.productBrand = productCreateDto.getProductBrand();
+		this.dateProductWasAdded = productCreateDto.getDateProductWasAdded();
+		this.productExpiryDate = productCreateDto.getProductExpiryDate();
+		this.serialNumberOfTheProduct = productCreateDto.getSerialNumberOfTheProduct();	
+	}
+	
+	public Product(ProductUpdateDto productUpdateDto) {
+		
+		this.productStockQuantity = productUpdateDto.getProductStockQuantity();
+		this.productName = productUpdateDto.getProductName();
+		this.productPrice = productUpdateDto.getProductPrice();
+		this.productBrand = productUpdateDto.getProductBrand();
+		this.dateProductWasAdded = productUpdateDto.getDateProductWasAdded();
+		this.productExpiryDate = productUpdateDto.getProductExpiryDate();
+		this.serialNumberOfTheProduct = productUpdateDto.getSerialNumberOfTheProduct();	
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

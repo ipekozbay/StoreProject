@@ -17,5 +17,7 @@ public class ProductCreateDto {
 	private String productBrand;
 	private Date dateProductWasAdded;
 	private Date productExpiryDate;
+	private String serialNumberOfTheProduct;
+
 
 }

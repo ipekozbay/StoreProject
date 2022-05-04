@@ -1,7 +1,7 @@
 package CMV.StoreProject.business.concretes;
 
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -16,29 +16,41 @@ import CMV.StoreProject.core.utilities.results.SuccessDataResult;
 import CMV.StoreProject.core.utilities.results.SuccessResult;
 import CMV.StoreProject.dataAccess.abstracts.ProductDao;
 import CMV.StoreProject.entities.concretes.Product;
+import CMV.StoreProject.entities.dto.ProductCreateDto;
+import CMV.StoreProject.entities.dto.ProductDto;
+import CMV.StoreProject.entities.dto.ProductUpdateDto;
 
 @Service
 public class ProductManager implements ProductService {
 
-	private ProductDao productDao;
+	private final ProductDao productDao;
 
-	@Autowired
+	//@Autowired
 	public ProductManager(ProductDao productDao) {
-		super();
+		// super();
 		this.productDao = productDao;
 	}
 
 	@Override
-	public DataResult<List<Product>> getAll() {
+	public DataResult<List<ProductDto>> getAll() {
 
-		return new SuccessDataResult<List<Product>>(this.productDao.findAll(), "data listed");
+		List<ProductDto> result = this.productDao.findAll()
+                .stream()
+                .map(ProductDto::new)
+                .collect(Collectors.toList());
+		 return new SuccessDataResult<List<ProductDto>>(result);
 
 	}
 
 	@Override
-	public DataResult<List<Product>> getAll(int pageNo, int pageSize) {
+	public DataResult<List<ProductDto>> getAll(int pageNo, int pageSize) {
 		Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
-		return new SuccessDataResult<List<Product>>(this.productDao.findAll(pageable).getContent());
+		List<ProductDto> result = this.productDao.findAll(pageable)
+				.getContent()
+                .stream()
+                .map(ProductDto::new)
+                .collect(Collectors.toList());
+		return new SuccessDataResult<List<ProductDto>>(result);
 	}
 
 	private Result existsBySerialNumberOfTheProduct(String serialNumberOfTheProduct) {
@@ -53,13 +65,14 @@ public class ProductManager implements ProductService {
 	}
 
 	@Override
-	public Result add(Product product) {
+	public Result add(ProductCreateDto productCreateDto) {
 
-		Result result = existsBySerialNumberOfTheProduct(product.getSerialNumberOfTheProduct());
+		Result result = existsBySerialNumberOfTheProduct(productCreateDto.getSerialNumberOfTheProduct());
 
 		if (result.isSucceess())
 			return new ErrorResult("product already exists.");
 
+		Product product = new Product(productCreateDto);
 		this.productDao.save(product);
 		return new SuccessResult("added.");
 	}
@@ -71,7 +84,9 @@ public class ProductManager implements ProductService {
 	}
 
 	@Override
-	public Result update(Product product) {
+	public Result update(ProductUpdateDto productUpdateDto) {
+		Product product = new Product(productUpdateDto);
+
 		this.productDao.save(product);
 		return new SuccessResult("updated.");
 	}
