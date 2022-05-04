@@ -29,7 +29,7 @@ public class Product {
 		this.productStockQuantity = productCreateDto.getProductStockQuantity();
 		this.productName = productCreateDto.getProductName();
 		this.productPrice = productCreateDto.getProductPrice();
-		this.productBrand = productCreateDto.getProductBrand();
+		this.brand = new Brand(productCreateDto.getBrandId());
 		this.dateProductWasAdded = productCreateDto.getDateProductWasAdded();
 		this.productExpiryDate = productCreateDto.getProductExpiryDate();
 		this.serialNumberOfTheProduct = productCreateDto.getSerialNumberOfTheProduct();	
@@ -40,7 +40,7 @@ public class Product {
 		this.productStockQuantity = productUpdateDto.getProductStockQuantity();
 		this.productName = productUpdateDto.getProductName();
 		this.productPrice = productUpdateDto.getProductPrice();
-		this.productBrand = productUpdateDto.getProductBrand();
+		this.brand = new Brand(productUpdateDto.getBrandId());
 		this.dateProductWasAdded = productUpdateDto.getDateProductWasAdded();
 		this.productExpiryDate = productUpdateDto.getProductExpiryDate();
 		this.serialNumberOfTheProduct = productUpdateDto.getSerialNumberOfTheProduct();	
@@ -59,9 +59,6 @@ public class Product {
 
 	@Column(name = "product_price")
 	private int productPrice;
-
-	@Column(name = "product_brand")
-	private String productBrand;
 
 	@Column(name = "date_product_was_added")
 	private Date dateProductWasAdded;

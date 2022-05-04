@@ -14,10 +14,10 @@ public class ProductCreateDto {
 	private int productStockQuantity;
 	private String productName;
 	private int productPrice;
-	private String productBrand;
+	private int brandId;
 	private Date dateProductWasAdded;
 	private Date productExpiryDate;
 	private String serialNumberOfTheProduct;
-
+	
 
 }

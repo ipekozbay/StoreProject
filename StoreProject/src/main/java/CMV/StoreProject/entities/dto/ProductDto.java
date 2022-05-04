@@ -13,18 +13,18 @@ public class ProductDto {
 	private int productStockQuantity;
 	private String productName;
 	private int productPrice;
-	private String productBrand;
+	private int brandId;
 	private Date dateProductWasAdded;
 	private Date productExpiryDate;
 	
 
-	public ProductDto(int productStockQuantity, String productName, int productPrice, String productBrand,
+	public ProductDto(int productStockQuantity, String productName, int productPrice, int brandId,
 			Date dateProductWasAdded, Date productExpiryDate) {
 		//super();
 		this.productStockQuantity = productStockQuantity;
 		this.productName = productName;
 		this.productPrice = productPrice;
-		this.productBrand = productBrand;
+		this.brandId = brandId;
 		this.dateProductWasAdded = dateProductWasAdded;
 		this.productExpiryDate = productExpiryDate;
 	}
@@ -33,7 +33,7 @@ public class ProductDto {
 		this(product.getProductStockQuantity(),
 				product.getProductName(), 
 				product.getProductPrice(), 
-				product.getProductBrand(), 
+				product.getBrand().getId(), 
 				product.getDateProductWasAdded(), 
 				product.getProductExpiryDate());
 	}

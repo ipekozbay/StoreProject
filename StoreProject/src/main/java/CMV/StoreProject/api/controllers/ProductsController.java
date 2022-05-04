@@ -2,22 +2,24 @@ package CMV.StoreProject.api.controllers;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import CMV.StoreProject.business.abstracts.ProductService;
 import CMV.StoreProject.core.utilities.results.DataResult;
 import CMV.StoreProject.core.utilities.results.Result;
-import CMV.StoreProject.entities.concretes.Product;
+
 import CMV.StoreProject.entities.dto.ProductCreateDto;
 import CMV.StoreProject.entities.dto.ProductDto;
 import CMV.StoreProject.entities.dto.ProductUpdateDto;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/products")

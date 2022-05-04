@@ -12,9 +12,7 @@
     <fullyQualifiedTypeName name="springfox.documentation.builders.PathSelectors"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.core.utilities.results.SuccessDataResult"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.core.utilities.results.DataResult"/>
-    <fullyQualifiedTypeName name="CMV.StoreProject.core.utilities.results.SuccessResult"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="CMV.StoreProject.core.utilities.results.Result"/>
     <fullyQualifiedTypeName name="io.swagger.v3.oas.annotations.parameters.RequestBody"/>
     <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
@@ -25,7 +23,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnoreProperties"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.awt.print.Pageable"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
@@ -41,8 +38,6 @@
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.entities.dto.BrandCreateDto"/>
-    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
-    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.business.abstracts.BrandService"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.dataAccess.abstracts.BrandDao"/>
@@ -52,7 +47,13 @@
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.entities.concretes.Product"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.entities.dto.ProductDto"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.entities.dto.ProductCreateDto"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.entities.dto.ProductUpdateDto"/>
+    <fullyQualifiedTypeName name="CMV.StoreProject.core.utilities.results.Result"/>
+    <fullyQualifiedTypeName name="CMV.StoreProject.core.utilities.results.SuccessResult"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 </qualifiedTypeNameHistroy>

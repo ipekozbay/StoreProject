@@ -38,7 +38,7 @@ public class Brand {
 	@Column(name = "brand_name")
 	private String brandName;
 
-	@OneToMany(mappedBy = "productBrand", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
 	private List<Product> products;
 
 }

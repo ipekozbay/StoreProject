@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class BrandCreateDto {
+	
 	private String brandName;
 	
-
 }
