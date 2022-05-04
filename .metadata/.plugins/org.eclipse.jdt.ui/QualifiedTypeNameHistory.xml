@@ -7,7 +7,6 @@
     <fullyQualifiedTypeName name="CMV.StoreProject.dataAccess.abstracts.ProductDao"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.business.abstracts.ProductService"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="CMV.StoreProject.entities.concretes.Product"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
     <fullyQualifiedTypeName name="springfox.documentation.builders.PathSelectors"/>
@@ -31,7 +30,6 @@
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
-    <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.entities.dto.ProductWithCategoryDto"/>
     <fullyQualifiedTypeName name="CMV.StoreProject.core.utilities.results.ErrorResult"/>
@@ -51,4 +49,10 @@
     <fullyQualifiedTypeName name="CMV.StoreProject.entities.concretes.Brand"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="CMV.StoreProject.entities.concretes.Product"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="CMV.StoreProject.entities.dto.ProductDto"/>
+    <fullyQualifiedTypeName name="CMV.StoreProject.entities.dto.ProductCreateDto"/>
+    <fullyQualifiedTypeName name="CMV.StoreProject.entities.dto.ProductUpdateDto"/>
 </qualifiedTypeNameHistroy>
