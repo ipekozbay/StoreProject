@@ -35,12 +35,12 @@ public class BrandManager implements BrandService {
 	public Result add(BrandCreateDto brandCreateDto) {
 		Result result = existsByBrandName(brandCreateDto.getBrandName());
 		if (result.isSucceess())
-			return new ErrorResult("not added");
+			return new ErrorResult("Brand name already exists");
 
 		Brand brandForCreate = new Brand(brandCreateDto.getBrandName());
 
 		this.brandDao.save(brandForCreate);
-		return new SuccessResult("added");
+		return new SuccessResult("Added");
 	}
 
 }

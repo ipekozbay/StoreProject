@@ -1,0 +1,10 @@
+package CMV.StoreProject.dataAccess.abstracts;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import CMV.StoreProject.entities.concretes.Brand;
+
+public interface CategoryDao extends JpaRepository<Brand, Integer>{
+
+	boolean existsByCategoryId(int categoryId);
+}

@@ -75,7 +75,7 @@ public class ProductManager implements ProductService {
 		Result result = existsBySerialNumberOfTheProduct(productCreateDto.getSerialNumberOfTheProduct());
 
 		if (result.isSucceess())
-			return new ErrorResult("product already exists.");
+			return new ErrorResult("serial number already exists. ");
 
 		Product product = new Product(productCreateDto);
 		this.productDao.save(product);

@@ -30,6 +30,7 @@ public class Product {
 		this.productName = productCreateDto.getProductName();
 		this.productPrice = productCreateDto.getProductPrice();
 		this.brand = new Brand(productCreateDto.getBrandId());
+		this.category = new Category(productCreateDto.getCategoryId());
 		this.dateProductWasAdded = productCreateDto.getDateProductWasAdded();
 		this.productExpiryDate = productCreateDto.getProductExpiryDate();
 		this.serialNumberOfTheProduct = productCreateDto.getSerialNumberOfTheProduct();	
@@ -41,6 +42,7 @@ public class Product {
 		this.productName = productUpdateDto.getProductName();
 		this.productPrice = productUpdateDto.getProductPrice();
 		this.brand = new Brand(productUpdateDto.getBrandId());
+		this.category = new Category(productUpdateDto.getCategoryId());
 		this.dateProductWasAdded = productUpdateDto.getDateProductWasAdded();
 		this.productExpiryDate = productUpdateDto.getProductExpiryDate();
 		this.serialNumberOfTheProduct = productUpdateDto.getSerialNumberOfTheProduct();	

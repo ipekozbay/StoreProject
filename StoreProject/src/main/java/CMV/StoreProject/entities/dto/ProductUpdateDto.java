@@ -17,6 +17,7 @@ public class ProductUpdateDto {
 	private String productName;
 	private int productPrice;
 	private int brandId;
+	private int categoryId;
 	private Date dateProductWasAdded;
 	private Date productExpiryDate;
 	private String serialNumberOfTheProduct;
@@ -28,6 +29,7 @@ public class ProductUpdateDto {
 				product.getProductName(), 
 				product.getProductPrice(),
 				product.getBrand().getId(),
+				product.getCategory().getCategoryId(),
 				product.getDateProductWasAdded(), 
 				product.getProductExpiryDate(),
 				product.getSerialNumberOfTheProduct());

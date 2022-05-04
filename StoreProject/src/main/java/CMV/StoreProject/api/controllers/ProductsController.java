@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import CMV.StoreProject.business.abstracts.ProductService;
 import CMV.StoreProject.core.utilities.results.DataResult;
 import CMV.StoreProject.core.utilities.results.Result;
-
+import CMV.StoreProject.entities.concretes.Product;
 import CMV.StoreProject.entities.dto.ProductCreateDto;
 import CMV.StoreProject.entities.dto.ProductDto;
 import CMV.StoreProject.entities.dto.ProductUpdateDto;
@@ -37,6 +37,11 @@ public class ProductsController {
     public ResponseEntity<?> getAll(){
         DataResult<List<ProductDto>> result = this.productService.getAll();
         return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+	
+	@GetMapping("/getAllByPage")
+	public DataResult<List<ProductDto>> getAllByPage(int pageNo, int pageSize) {
+		return this.productService.getAll(pageNo, pageSize);
     }
 
 	@PostMapping("/add")

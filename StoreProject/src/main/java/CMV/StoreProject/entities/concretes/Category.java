@@ -2,6 +2,7 @@ package CMV.StoreProject.entities.concretes;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +24,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInıtializer","handler","products"})
 public class Category {
+	
+	public Category(int categoryId) {
+		this.categoryId=categoryId;
+	}
+	
+	public Category(String categoryName) {
+		this.categoryName=categoryName;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +41,6 @@ public class Category {
 	@Column(name = "category_name")
 	private String categoryName;
 
-	@OneToMany(mappedBy = "category")
+	@OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
 	private List<Product> products;
 }

@@ -1,0 +1,7 @@
+package CMV.StoreProject.business.abstracts;
+
+public interface CategoryService {
+
+	Result add();
+	
+}
