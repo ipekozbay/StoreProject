@@ -83,53 +83,5 @@ public class Product {
 	@JoinColumn(name = "brand_id", nullable = false)
 	private Brand brand;
 
-	/*
-	 * public Product() {}
-	 * 
-	 * public Product(int productStockQuantity, int productPrice, String
-	 * productBrand, int dateProductWasAdded, int productExpiryDate, String
-	 * categoryOfTheProduct, String serialNumberOfTheProduct) { super();
-	 * this.productStockQuantity = productStockQuantity; this.productPrice =
-	 * productPrice; this.productBrand = productBrand; this.dateProductWasAdded =
-	 * dateProductWasAdded; this.productExpiryDate = productExpiryDate;
-	 * this.categoryOfTheProduct = categoryOfTheProduct;
-	 * this.serialNumberOfTheProduct = serialNumberOfTheProduct; }
-	 * 
-	 * public int getProductStockQuantity() { return productStockQuantity; }
-	 * 
-	 * public void setProductStockQuantity(int productStockQuantity) {
-	 * this.productStockQuantity = productStockQuantity; }
-	 * 
-	 * public int getProductPrice() { return productPrice; }
-	 * 
-	 * public void setProductPrice(int productPrice) { this.productPrice =
-	 * productPrice; }
-	 * 
-	 * public String getProductBrand() { return productBrand; }
-	 * 
-	 * public void setProductBrand(String productBrand) { this.productBrand =
-	 * productBrand; }
-	 * 
-	 * public int getDateProductWasAdded() { return dateProductWasAdded; }
-	 * 
-	 * public void setDateProductWasAdded(int dateProductWasAdded) {
-	 * this.dateProductWasAdded = dateProductWasAdded; }
-	 * 
-	 * public int getProductExpiryDate() { return productExpiryDate; }
-	 * 
-	 * public void setProductExpiryDate(int productExpiryDate) {
-	 * this.productExpiryDate = productExpiryDate; }
-	 * 
-	 * public String getCategoryOfTheProduct() { return categoryOfTheProduct; }
-	 * 
-	 * public void setCategoryOfTheProduct(String categoryOfTheProduct) {
-	 * this.categoryOfTheProduct = categoryOfTheProduct; }
-	 * 
-	 * public String getSerialNumberOfTheProduct() { return
-	 * serialNumberOfTheProduct; }
-	 * 
-	 * public void setSerialNumberOfTheProduct(String serialNumberOfTheProduct) {
-	 * this.serialNumberOfTheProduct = serialNumberOfTheProduct; }
-	 */
 
 }

@@ -3,6 +3,8 @@ package CMV.StoreProject.api.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,9 @@ import CMV.StoreProject.business.abstracts.ProductService;
 import CMV.StoreProject.core.utilities.results.DataResult;
 import CMV.StoreProject.core.utilities.results.Result;
 import CMV.StoreProject.entities.concretes.Product;
+import CMV.StoreProject.entities.dto.ProductCreateDto;
+import CMV.StoreProject.entities.dto.ProductDto;
+import CMV.StoreProject.entities.dto.ProductUpdateDto;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
@@ -25,26 +30,29 @@ public class ProductsController {
 		super();
 		this.productService = productService;
 	}
-
+	
 	@GetMapping("/getall")
-	public DataResult<List<Product>> getAll() {
-		return this.productService.getAll();
-	}
+    public ResponseEntity<?> getAll(){
+        DataResult<List<ProductDto>> result = this.productService.getAll();
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 
 	@PostMapping("/add")
-	public Result add(@RequestBody Product product) {
-		return this.productService.add(product);
+	    public ResponseEntity<?> add(@RequestBody ProductCreateDto createDto){
+	        Result result = this.productService.add(createDto);
+	        return new ResponseEntity<>(result, HttpStatus.OK);
 	}
-
+	
 	@PostMapping("/delete")
 	public Result delete(@RequestBody int id) {
 		return this.productService.delete(id);
 	}
 
 	@PostMapping("/update")
-	public Result update(@RequestBody Product product) {
-		return this.productService.update(product);
-	}
+    public ResponseEntity<?> update(@RequestBody ProductUpdateDto productUpdateDto){
+        Result result = this.productService.update(productUpdateDto);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+}
 
 //	@GetMapping("/ProductWithCategoryDto")
 //	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {

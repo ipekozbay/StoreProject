@@ -25,7 +25,7 @@ public class ProductManager implements ProductService {
 
 	private final ProductDao productDao;
 
-	//@Autowired
+	// @Autowired
 	public ProductManager(ProductDao productDao) {
 		// super();
 		this.productDao = productDao;
@@ -34,28 +34,33 @@ public class ProductManager implements ProductService {
 	@Override
 	public DataResult<List<ProductDto>> getAll() {
 
-		List<ProductDto> result = this.productDao.findAll()
-                .stream()
-                .map(ProductDto::new)
-                .collect(Collectors.toList());
-		 return new SuccessDataResult<List<ProductDto>>(result);
+		List<ProductDto> result = this.productDao.findAll().stream().map(ProductDto::new).collect(Collectors.toList());
+		return new SuccessDataResult<List<ProductDto>>(result);
 
 	}
 
 	@Override
 	public DataResult<List<ProductDto>> getAll(int pageNo, int pageSize) {
 		Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
-		List<ProductDto> result = this.productDao.findAll(pageable)
-				.getContent()
-                .stream()
-                .map(ProductDto::new)
-                .collect(Collectors.toList());
+		List<ProductDto> result = this.productDao.findAll(pageable).getContent().stream().map(ProductDto::new)
+				.collect(Collectors.toList());
 		return new SuccessDataResult<List<ProductDto>>(result);
 	}
 
 	private Result existsBySerialNumberOfTheProduct(String serialNumberOfTheProduct) {
 
 		boolean result = this.productDao.existsBySerialNumberOfTheProduct(serialNumberOfTheProduct);
+
+		if (result == false)
+			return new ErrorResult();
+
+		return new SuccessResult();
+
+	}
+
+	private Result existsById(int id) {
+
+		boolean result = this.productDao.existsById(id);
 
 		if (result == false)
 			return new ErrorResult();
@@ -79,12 +84,23 @@ public class ProductManager implements ProductService {
 
 	@Override
 	public Result delete(int id) {
+
+		Result result = existsById(id);
+
+		if (!result.isSucceess())
+			return new ErrorResult("product not exists.");
+
 		this.productDao.deleteById(id);
 		return new SuccessResult("deleted.");
 	}
 
 	@Override
 	public Result update(ProductUpdateDto productUpdateDto) {
+		
+		Result result = existsById(productUpdateDto.getId());
+		if (!result.isSucceess())
+			return new ErrorResult("product not exists.");
+
 		Product product = new Product(productUpdateDto);
 
 		this.productDao.save(product);
