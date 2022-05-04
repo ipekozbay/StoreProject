@@ -1,0 +1,9 @@
+package CMV.StoreProject.dataAccess.abstracts;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import CMV.StoreProject.entities.concretes.Brand;
+
+public class BrandDao extends JpaRepository<Brand, Integer>{
+
+}

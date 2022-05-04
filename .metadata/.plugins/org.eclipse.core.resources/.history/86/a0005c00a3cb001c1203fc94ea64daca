@@ -1,0 +1,15 @@
+package CMV.StoreProject.business.concretes;
+
+import CMV.StoreProject.business.abstracts.BrandService;
+import CMV.StoreProject.entities.dto.BrandCreateDto;
+
+public class BrandManager implements BrandService{
+
+	@Override
+	public boolean add(BrandCreateDto brandCreateDto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+
+}

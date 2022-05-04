@@ -2,6 +2,7 @@ package CMV.StoreProject.business.concretes;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +16,6 @@ import CMV.StoreProject.core.utilities.results.SuccessDataResult;
 import CMV.StoreProject.core.utilities.results.SuccessResult;
 import CMV.StoreProject.dataAccess.abstracts.ProductDao;
 import CMV.StoreProject.entities.concretes.Product;
-import CMV.StoreProject.entities.dto.ProductWithCategoryDto;
 
 @Service
 public class ProductManager implements ProductService {

@@ -1,8 +1,6 @@
 package CMV.StoreProject.entities.concretes;
 
-import java.time.LocalDate;
 import java.util.Date;
-
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -12,12 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -47,11 +39,9 @@ public class Product {
 	@Column(name = "product_brand")
 	private String productBrand;
 
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name = "date_product_was_added")
 	private Date dateProductWasAdded;
 
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name = "product_expiry_date")
 	private Date productExpiryDate;
 
@@ -64,6 +54,10 @@ public class Product {
 	@ManyToOne()
 	@JoinColumn(name = "category_id")
 	private Category category;
+
+	@ManyToOne()
+	@JoinColumn(name = "brand_id", nullable = false)
+	private Brand brand;
 
 	/*
 	 * public Product() {}

@@ -4,9 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import CMV.StoreProject.entities.concretes.Product;
-import CMV.StoreProject.entities.dto.ProductWithCategoryDto;
 
 public interface ProductDao extends JpaRepository<Product, Integer> {
 

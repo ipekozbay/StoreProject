@@ -1,0 +1,6 @@
+package CMV.StoreProject.entities.dto;
+
+public class ProductDto {
+	
+
+}

@@ -6,14 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import CMV.StoreProject.business.abstracts.ProductService;
 import CMV.StoreProject.core.utilities.results.DataResult;
 import CMV.StoreProject.core.utilities.results.Result;
 import CMV.StoreProject.entities.concretes.Product;
-import CMV.StoreProject.entities.dto.ProductWithCategoryDto;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
@@ -53,8 +51,6 @@ public class ProductsController {
 //
 //		return this.productService.getProductWithCategoryDetails();
 //	}
-//
-
 //
 //	@GetMapping("/getByProductName")
 //	public DataResult<Product> getByProductName(@RequestParam String productName) {

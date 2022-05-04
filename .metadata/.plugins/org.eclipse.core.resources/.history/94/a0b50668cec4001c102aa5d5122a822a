@@ -1,5 +1,0 @@
-package CMV.StoreProject.dataAccess.abstracts;
-
-public interface ProductDao {
-
-}
